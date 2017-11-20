@@ -7,8 +7,13 @@ class TweetsController < ApplicationController
   end
 
   def create
-    create
-    redirect_to "/tweets"
+    Tweet.create(name: params[:name], image: params[:image], text: params[:text])
   end
+
+  private
+  def tweet_params
+    params.permit(:name, :image, :text)
+  end
+
 
 end
