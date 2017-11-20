@@ -5,4 +5,10 @@ class TweetsController < ApplicationController
 
   def new
   end
+
+  def create
+    create
+    redirect_to "/tweets"
+  end
+
 end
